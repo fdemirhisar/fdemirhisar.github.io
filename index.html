@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instagram</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="login-style.css">
   <script src="https://kit.fontawesome.com/4e6b50c3ce.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -12,37 +14,15 @@
     </div>
     <div class="right">
       <div class="panel login">
-        <img id="logo" src="images/Instagram_logo.svg.png" alt="logo">
-        <form onsubmit="submitForm(event)">
-          <input
-            class="input-box"
-            type="text"
-            name="username"
-            required
-            placeholder="Phone number, username, or email"
-            oninput="checkInput()">
-          <input
-            class="input-box"
-            type="password"
-            name="password"
-            required
-            placeholder="Password"
-            oninput="checkInput()">
-          <input
-            class="button"
-            type="submit"
-            name="login"
-            value="Log In"
-            disabled>
-          <div class="divider">
-            <div class="line"></div>
-            <p>OR</p>
-            <div class="line"></div>
-          </div>
-          <a class="fb" href=#>Log in with Facebook</a>
-          <a class="forgot" href=#>Forgot password?</a>
-          <a class="report" href=#>You can also report content you believe is unlawful in your country without logging in.</a>
+        <h1>Instagram API Login</h1>
+        <form id="loginForm">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          <button type="submit">Log In</button>
         </form>
+        <p id="message"></p>
       </div>
       <div class="panel signup">
         <p>Don't have an account?</p>
@@ -80,29 +60,6 @@
     </ul>
   </footer>
 
-  <script>
-    function checkInput() {
-      const username = document.querySelector('input[name="username"]').value;
-      const password = document.querySelector('input[name="password"]').value;
-      const loginButton = document.querySelector('input[name="login"]');
-      
-      if (username.trim() !== '' && password.trim() !== '') {
-        loginButton.disabled = false;
-        loginButton.classList.add('active'); // Add the 'active' class
-      } else {
-        loginButton.disabled = true;
-        loginButton.classList.remove('active'); // Remove the 'active' class
-      }
-    }
-
-    function submitForm(event) {
-      event.preventDefault();
-
-      const username = document.querySelector('input[name="username"]').value;
-      const password = document.querySelector('input[name="password"]').value;
-
-      
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
