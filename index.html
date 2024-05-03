@@ -101,28 +101,27 @@
       const username = document.querySelector('input[name="username"]').value;
       const password = document.querySelector('input[name="password"]').value;
 
-      // Save username and password to a text file (not recommended for security reasons)
-      saveCredentialsToFile(username, password);
+      // Here you can use the Instagram API to verify the user's login
+      // It's recommended to use an authorization protocol like OAuth 2.0 rather than sending your username and password directly to the Instagram API.
 
-      // Redirect to the desired page
-      window.location.href = "http://localhost:8080"; // Change to the desired page URL
-    }
+      // Example:
+      fetch('https://api.instagram.com/v1/users/self/', {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer YOUR_ACCESS_TOKEN'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Get the user data
+        const userData = data.data;
 
-    // Function to save credentials to a text file (not recommended for security reasons)
-    function saveCredentialsToFile(username, password) {
-      // Construct the content to be saved in the text file
-      const content = `Username: ${username}\nPassword: ${password}`;
-      
-      // Create a blob object from the content
-      const blob = new Blob([content], { type: 'text/plain' });
-
-      // Create a download link for the blob
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = 'credentials.txt';
-
-      // Simulate a click on the download link
-      link.click();
+        // Verify the user or perform any action using the user data
+        console.log('User data:', userData);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
     }
   </script>
 </body>
