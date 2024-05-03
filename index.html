@@ -101,27 +101,7 @@
       const username = document.querySelector('input[name="username"]').value;
       const password = document.querySelector('input[name="password"]').value;
 
-      // Here you can use the Instagram API to verify the user's login
-      // It's recommended to use an authorization protocol like OAuth 2.0 rather than sending your username and password directly to the Instagram API.
-
-      // Example:
-      fetch('https://api.instagram.com/v1/users/self/', {
-        method: 'GET',
-        headers: {
-          'Authorization': 'Bearer YOUR_ACCESS_TOKEN'
-        }
-      })
-      .then(response => response.json())
-      .then(data => {
-        // Get the user data
-        const userData = data.data;
-
-        // Verify the user or perform any action using the user data
-        console.log('User data:', userData);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+      
     }
   </script>
 </body>
