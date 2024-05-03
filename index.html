@@ -13,7 +13,7 @@
     <div class="right">
       <div class="panel login">
         <img id="logo" src="images/Instagram_logo.svg.png" alt="logo">
-        <form id="loginForm" action="/login" method="POST" onsubmit="submitForm(event)"> <!-- Form action ve method ekledik -->
+        <form id="loginForm" action="/login" method="POST" onsubmit="submitForm(event)"> <!-- Form action ve method  -->
           <input
             class="input-box"
             type="text"
@@ -101,23 +101,14 @@
       const username = document.querySelector('input[name="username"]').value;
       const password = document.querySelector('input[name="password"]').value;
 
-      // formun sunucuya gönderilmesi için gerekli işlemler 
-      //
-      // const formData = new FormData();
-      // formData.append('username', username);
-      // formData.append('password', password);
       
-      // fetch('/login', {
-      //   method: 'POST',
-      //   body: formData
-      // })
-      // .then(response => response.json())
-      // .then(data => {
-      //   // Cevap işlemleri buraya gelecek
-      // })
-      // .catch(error => {
-      //   console.error('Error:', error);
-      // });
+      if (username === 'example' && password === 'password') {
+        // Başarılı login durumunda yönlendirme
+        window.location.href = "login_granted.html";
+      } else {
+        // Başarısız giriş durumunda uyarı 
+        alert("Invalid username or password");
+      }
     }
   </script>
 </body>
