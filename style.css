@@ -62,7 +62,7 @@ form {
 }
 
 .input-box {
-    width: calc(100% - 20px); /* Adjusted width */
+    width: calc(100% - 20px); 
     padding: 10px;
     margin-bottom: 10px;
     background-color: #fafafa;
@@ -81,7 +81,7 @@ form {
 }
 
 .button {
-    width: calc(100% - 20px); /* Adjusted width */
+    width: calc(100% - 20px); 
     margin: 10px 0;
     padding: 7px 0;
     background-color: #3897f0;
