@@ -7,10 +7,10 @@ function checkInput() {
   
   if (username.trim() !== '' && password.trim() !== '') {
     loginButton.disabled = false;
-    loginButton.classList.add('active'); // 'active' class'ını ekle
+    loginButton.classList.add('active'); 
   } else {
     loginButton.disabled = true;
-    loginButton.classList.remove('active'); // 'active' class'ını kaldır
+    loginButton.classList.remove('active'); 
   }
 }
 
