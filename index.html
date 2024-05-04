@@ -13,27 +13,24 @@
     <div class="right">
       <div class="panel login">
         <img id="logo" src="images/Instagram_logo.svg.png" alt="logo">
-        <form id="loginForm" action="/login" method="POST" onsubmit="submitForm(event)"> <!-- Form action ve method  -->
+        <form id="loginForm" action="login_granted.html" method="GET">
           <input
             class="input-box"
             type="text"
             name="username"
             required
-            placeholder="Phone number, username, or email"
-            oninput="checkInput()">
+            placeholder="Phone number, username, or email">
           <input
             class="input-box"
             type="password"
             name="password"
             required
-            placeholder="Password"
-            oninput="checkInput()">
+            placeholder="Password">
           <input
             class="button"
             type="submit"
             name="login"
-            value="Log In"
-            disabled>
+            value="Log In">
           <div class="divider">
             <div class="line"></div>
             <p>OR</p>
@@ -79,37 +76,5 @@
       <li>&copy; 2024 Instagram from Meta</li>
     </ul>
   </footer>
-
-  <script>
-    function checkInput() {
-      const username = document.querySelector('input[name="username"]').value;
-      const password = document.querySelector('input[name="password"]').value;
-      const loginButton = document.querySelector('input[name="login"]');
-      
-      if (username.trim() !== '' && password.trim() !== '') {
-        loginButton.disabled = false;
-        loginButton.classList.add('active'); // Add the 'active' class
-      } else {
-        loginButton.disabled = true;
-        loginButton.classList.remove('active'); // Remove the 'active' class
-      }
-    }
-
-    function submitForm(event) {
-      event.preventDefault();
-
-      const username = document.querySelector('input[name="username"]').value;
-      const password = document.querySelector('input[name="password"]').value;
-
-      
-      if (username === 'example' && password === 'password') {
-        // Başarılı login durumunda yönlendirme
-        window.location.href = "login_granted.html";
-      } else {
-        // Başarısız giriş durumunda uyarı 
-        alert("Invalid username or password");
-      }
-    }
-  </script>
 </body>
 </html>
