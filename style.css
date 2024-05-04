@@ -136,17 +136,18 @@ form {
     font-size: 12px;
 }
 
+
 .signup {
-    justify-content: flex-end; /* Sağa hizalama */
+    justify-content: flex-end; 
     gap: 5px;
     font-size: 14px;
+    color: #065fd4; 
 }
 
-.signup p {
-    color: #262626; /* Yazı rengini koyulaştırma */
-    font-weight: bold; /* Yazıyı kalın yapma */
-    margin-right: 5px; /* Sağdan boşluk */
+.signup a {
+    color: #065fd4; 
 }
+
 
 
 .apps {
