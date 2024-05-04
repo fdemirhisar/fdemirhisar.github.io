@@ -137,12 +137,11 @@ form {
 }
 
 
-.signup {
-    justify-content: flex-end; 
-    gap: 5px;
-    font-size: 14px;
-    color: #065fd4; 
+.signup p {
+    color: #000000; 
+    font-weight: bold; 
 }
+
 
 .signup a {
     color: #065fd4; 
